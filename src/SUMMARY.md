@@ -1,6 +1,6 @@
 # Summary
 
-[Introduction](README.md)
+[Introduction](./intro.md)
 - [Installation](./install.md)
 - [Wii U Hardware](./hardware.md)
 - [Getting Started](./getting-started.md)
