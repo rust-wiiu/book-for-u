@@ -1,6 +1,16 @@
 [book]
+title = "Book for U"
 authors = ["29th-Day"]
+description = "Book to help you get started with developing your Wii U Homebrew in Rust."
 language = "en"
 multilingual = false
 src = "src"
-title = "Book for U"
+
+[output.html]
+git-repository-url = "https://github.com/rust-wiiu/book-for-u"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/rust-wiiu/book-for-u/edit/main/{path}"
+input-404 = "not-found.md"
+
+# https://github.com/lambdalisue/rs-mdbook-alerts
+[preprocessor.alerts]

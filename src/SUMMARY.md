@@ -1,15 +1,19 @@
 # Summary
 
 [Introduction](./intro.md)
+- [Requirements](./requirements.md)
 - [Installation](./install.md)
-- [Wii U Hardware](./hardware.md)
+- [Wii U](./wiiu/wiiu.md)
+    - [Hardware](./wiiu/hardware.md)
+    - [Software](./wiiu/software.md)
 - [Getting Started](./getting-started.md)
-- [Going beyond]()
-    - [RPX]()
-    - [RPL]()
-    - [WUHB]()
-    - [WUPS]()
-    - [WUMS]() 
+- [Formats](./formats/formats.md)
+    - [ELF](./formats/elf.md)
+    - [RPX](./formats/rpx.md)
+    - [RPL](./formats/rpl.md)
+    - [WUHB](./formats/wuhb.md)
+    - [WUPS](./formats/wups.md)
+    - [WUMS](./formats/wums.md) 
 
 -----------
 

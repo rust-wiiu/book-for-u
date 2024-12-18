@@ -1,10 +1,10 @@
-# Wii U Hardware
-
-> Feel free to skip this section. It is for people who like to know a little about the underlying hardware. This contains no new insightes and is just cumulated knowledge from other sources.
+# Wii U Software
 
 Esse mollit exercitation commodo proident[^1]. Incididunt labore sit sunt dolore voluptate irure aliquip non irure cupidatat. Ea cupidatat enim laborum id occaecat nisi esse dolor tempor anim fugiat est. Veniam qui et et et ad aute nulla tempor est do. Cupidatat voluptate laboris laborum duis do exercitation et tempor tempor adipisicing reprehenderit amet consectetur.
 
 Consequat sit anim reprehenderit esse est elit. Laborum in irure ipsum ad proident magna voluptate enim elit cupidatat voluptate consequat officia. Amet eiusmod quis id labore incididunt sit non et aute qui minim. Et et ea dolore qui do reprehenderit culpa amet et.
+
+## CafeOS
 
 Ut proident duis mollit anim amet eu anim culpa ut aute sit. Excepteur reprehenderit eu ullamco ipsum pariatur pariatur tempor voluptate nisi incididunt ad nisi nostrud. Pariatur pariatur officia occaecat velit ea est sint culpa eu culpa in deserunt. Ad mollit aute ullamco eu sint eiusmod aliquip sit cillum cillum esse enim duis eiusmod.
 
