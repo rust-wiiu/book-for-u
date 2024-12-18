@@ -8,6 +8,9 @@ Homebrew is a way to run inofficial, "unsigned" software on a closed system like
 
 I also recommend Wiiload to not have to eject, insert, eject, insert the SD Card all the time.
 
+
+While you don't actually **need** a Wii U console at hand to develop software, it is highly recommended as not everything can be ran on emulators due to stuff not being implemented, having different implementations, etc. Software which runs on an emulator might not work on hardware or vice versa.
+
 ## Development
 
 ### Emulator
