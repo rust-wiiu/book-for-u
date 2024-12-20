@@ -3,7 +3,7 @@
 [Introduction](./intro.md)
 - [Requirements](./requirements.md)
 - [Installation](./install.md)
-- [Wii U](./wiiu.md)
+- [Wii U Architecture](./wiiu.md)
 - [Getting Started](./getting-started.md)
 - [Formats](./formats/formats.md)
     - [ELF](./formats/elf.md)
