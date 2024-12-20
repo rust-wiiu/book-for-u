@@ -1,36 +1,37 @@
 # Installation
 
-## Homebew
+## Homebrew
 
-TL;DR
+While you **don’t need a Wii U console** to develop software, having one is highly recommended. Not everything can run perfectly on emulators due to incomplete implementations, differences in behavior, or other quirks. Software that works on an emulator may fail on actual hardware, and vice versa. At the time of writing, the preferred homebrew environment for the Wii U is **Aroma**. To install it, I recommend following [this guide](https://wiiu.hacks.guide), though there are plenty of other resources available on Google, YouTube, and elsewhere.
 
-Homebrew is a way to run inofficial, "unsigned" software on a closed system like the Wii U. At the time of writing, "Aroma" is the prefered homebrew software. There are many tutorials on how to install it, I'll be refering you to [this](https://wiiubrew.org/wiki/Homebrew_setup_tutorial) but feel free to search on YouTube, etc.
+Once you’ve set up Aroma, I suggest installing the [Homebrew App Store](https://github.com/fortheusers/hb-appstore). This tool simplifies the process of installing and updating homebrew software. Any Wii U software I recommend *should* be available through this store. Some essential tools include:
 
-I also recommend Wiiload to not have to eject, insert, eject, insert the SD Card all the time.
-
-
-While you don't actually **need** a Wii U console at hand to develop software, it is highly recommended as not everything can be ran on emulators due to stuff not being implemented, having different implementations, etc. Software which runs on an emulator might not work on hardware or vice versa.
+- **[Wiiload Plugin](./requirements.md#software):** Avoid the hassle of repeatedly ejecting and reinserting the SD card. This tool allows you to upload `.rpx` or `.wuhb` files directly from the command line without requiring a reboot.
+- **[FTPiiU Plugin](./requirements.md#software):** Transfer generic files between your PC[^1] and the Wii U via FTP. This tool also allows you to inspect the local file structure, which can be invaluable for debugging.
 
 ## Development
 
+> [!TIP]
+> If you’re a Windows user, I highly recommend trying [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/windows/wsl/about) for development (even beyond this project). WSL simplifies workflows significantly, blending Windows and Linux environments seamlessly. IDEs like VSCode offer excellent WSL integration. 
+
 ### Emulator
 
-First and foremost: [Cemu](...). It's an FOSS and actively updated Wii U emulator. To the best of my knowledge, it's considered the standard for emulating the Wii U[^1]. This will be your main interaction point with your software as running it inside the emulator is often more quick and has some additional benefits, like easy debugging, memory viewer, call stack inspection, etc.
+Using an emulator during development can save you a lot of time. It significantly reduces the time spent switching between compiling and testing. When crashes inevitably happen (especially while working with the more advanced features of WUT), restarting an emulator is far quicker than rebooting a physical console.
 
-### Rust
-
-Enim ullamco quis commodo nisi laboris proident consequat voluptate dolor labore consequat cupidatat. Enim aute fugiat fugiat do pariatur adipisicing. Deserunt incididunt magna nostrud occaecat aliquip. Elit sunt sunt culpa officia ut labore. Consectetur voluptate anim dolore officia mollit fugiat sint. Sit laboris officia anim sint sunt tempor esse ex aliquip.
-
-Reprehenderit nulla est excepteur in laborum laborum. Et in occaecat exercitation quis aute in do adipisicing qui velit. Deserunt ullamco ex esse aliquip. Culpa labore non minim esse ullamco consectetur elit sunt irure ut excepteur et eu. Occaecat sunt ad aliqua enim anim nostrud irure aliquip aliqua proident aute quis dolor. Laboris nisi nostrud cupidatat tempor duis mollit mollit velit occaecat dolore aliqua pariatur. Deserunt commodo excepteur exercitation est minim tempor mollit reprehenderit eu et qui.
+Luckily, there’s a free and open-source emulator for the Wii U called **[Cemu](requirements.md#software)**, which is actively maintained and widely regarded as the standard for Wii U emulation. It allows for faster testing and offers useful debugging features like memory viewers, call stack inspection, and more. These tools are invaluable for troubleshooting issues that aren’t immediately obvious. You can [download Cemu here](https://github.com/cemu-project/Cemu/releases) and extract it to a convenient location on your system.
 
 ### DevkitPro
 
-Ut ex cillum deserunt eu aliquip cupidatat. Adipisicing amet dolore est consequat anim aliquip amet magna. Eiusmod incididunt aliquip sunt est voluptate quis esse reprehenderit elit do excepteur laborum cupidatat. Deserunt dolore deserunt commodo laborum Lorem duis amet voluptate magna eu culpa magna adipisicing.
+[DevkitPro](https://devkitpro.org/) is the backbone of Wii U homebrew development (and supports platforms like the GBA, DS, GameCube, Wii, and Switch). It provides a set of toolchains that enable you to compile code for specific Nintendo platforms. For Wii U development, you’ll need the **devkitPPC (PowerPC)** toolchain.
 
-Magna mollit consectetur labore irure non voluptate enim elit labore. Exercitation fugiat nulla tempor nisi dolor cupidatat. Officia excepteur sit consequat officia. Ad magna ullamco mollit sit veniam ad duis adipisicing. In occaecat magna sit dolor sit labore proident irure non.
+To install it, follow the [Getting Started](https://devkitpro.org/wiki/Getting_Started) guide on their website. After setting up `dkp-pacman`, install the necessary `wiiu-dev` package with the following command:
 
-Consectetur quis commodo consequat excepteur occaecat ad ipsum consequat minim ea mollit. Consectetur nostrud cupidatat ullamco eiusmod do tempor Lorem consectetur duis ullamco amet culpa. Est et anim non qui amet veniam reprehenderit proident officia culpa sunt duis consectetur nostrud. Duis incididunt consequat esse deserunt ut officia.
+```bash
+sudo dkp-pacman -S wiiu-dev
+```
 
-Lorem officia deserunt minim velit qui sunt consectetur est. Ea non nisi laborum id. Deserunt aute cupidatat voluptate reprehenderit irure labore ea fugiat commodo ad enim. Occaecat amet eiusmod consectetur Lorem ex adipisicing nisi tempor quis sunt.
+### Rust
 
-Proident quis et culpa nisi magna. Do non ipsum fugiat in aliquip sint velit ipsum dolore eiusmod commodo. Sunt est tempor enim et enim amet eu.
+All you need is an up-to-date Rust installation; everything else is provided by the other tools. You can set up Rust by following the [official installation guide](https://www.rust-lang.org/tools/install).
+
+[^1]: If you need to transfer files between your PC and the Wii U, you’ll need an FTP client. I personally use [FileZilla](https://filezilla-project.org/), but you can use any client that suits your needs.

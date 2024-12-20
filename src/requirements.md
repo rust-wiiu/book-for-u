@@ -8,7 +8,9 @@ This page provides a brief overview and checklist of recommended items for start
 - [Rust](https://www.rust-lang.org/)*
 - [cargo-make](https://github.com/sagiegurari/cargo-make)*
 - [DevkitPro](https://devkitpro.org/)*
-- [Wiiload Plugin](https://github.com/wiiu-env/wiiload_plugin) / [Wiiload](https://wiidatabase.de/downloads/pc-tools/wiiload/)
+- [Aroma](https://wiidatabase.de/wii-u-downloads/hacks/aroma/)
+- [Wiiload Plugin](https://github.com/wiiu-env/wiiload_plugin)
+- [FTPiiU Plugin](https://github.com/wiiu-env/ftpiiu_plugin)
 
 ## Skills
 
