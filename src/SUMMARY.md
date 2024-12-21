@@ -5,13 +5,7 @@
 - [Installation](./install.md)
 - [Wii U Architecture](./wiiu.md)
 - [Getting Started](./getting-started.md)
-- [Formats](./formats/formats.md)
-    - [ELF](./formats/elf.md)
-    - [RPX](./formats/rpx.md)
-    - [RPL](./formats/rpl.md)
-    - [WUHB](./formats/wuhb.md)
-    - [WUPS](./formats/wups.md)
-    - [WUMS](./formats/wums.md) 
+- [Unsafe Territory](./unsafe.md)
 
 -----------
 

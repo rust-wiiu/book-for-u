@@ -32,6 +32,27 @@ sudo dkp-pacman -S wiiu-dev
 
 ### Rust
 
-All you need is an up-to-date Rust installation; everything else is provided by the other tools. You can set up Rust by following the [official installation guide](https://www.rust-lang.org/tools/install).
+You need is an up-to-date Rust installation. You can set up Rust by following the [official installation guide](https://www.rust-lang.org/tools/install).
+
+minimal supported rust version is ≥ ...
+
+check version and verify installation with
+
+```bash
+cargo --version
+```
+
+task-runner & build tool for more complex than single commond builds
+
+```bash
+cargo install cargo-make
+```
+
+Optionally, you can install [cargo-generate](https://github.com/cargo-generate/cargo-generate), a tool for starting with templates instead of empty cargo projects. The same thing can be achieved with a small amout of manual commands, so not having it is not a big deal.
+
+```bash
+cargo install cargo-generate
+```
+
 
 [^1]: If you need to transfer files between your PC and the Wii U, you’ll need an FTP client. I personally use [FileZilla](https://filezilla-project.org/), but you can use any client that suits your needs.

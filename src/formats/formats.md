@@ -1,9 +1,0 @@
-# Formats
-
-Eiusmod eu deserunt laboris magna ut laborum minim veniam nisi labore do consequat non. Adipisicing ex reprehenderit ullamco cupidatat. Ullamco cupidatat dolor Lorem cupidatat cillum ea est eiusmod do anim amet culpa dolore dolore. Incididunt voluptate cupidatat dolor id occaecat excepteur laborum id. Amet ad exercitation sint ipsum. Aliqua est voluptate officia sint culpa non ullamco et ea in. Adipisicing id ea consequat laborum reprehenderit elit fugiat elit irure do do fugiat velit.
-
-Ad sit minim fugiat est irure officia quis velit reprehenderit eu. Elit magna consectetur labore voluptate do voluptate veniam proident. Labore reprehenderit ad deserunt deserunt sunt commodo et elit mollit adipisicing aliqua tempor. Ut cillum dolore eiusmod id tempor ipsum consectetur aliquip nostrud proident commodo. Ullamco magna nisi ad sunt consectetur consequat incididunt mollit. Ad commodo eiusmod sint veniam incididunt mollit deserunt occaecat incididunt enim velit eu nulla duis. Et duis officia velit sint do anim pariatur officia sit culpa laborum velit duis.
-
-Occaecat mollit incididunt deserunt excepteur non eiusmod ut ad mollit esse eu. Do esse cupidatat exercitation aliqua fugiat labore id incididunt consectetur eu magna Lorem duis dolore. Quis ad esse labore nostrud Lorem amet laborum ipsum. Dolor velit fugiat nisi consequat cupidatat amet reprehenderit velit. Officia sunt adipisicing velit in sint reprehenderit proident amet laborum consequat voluptate ad. Commodo aliquip magna ipsum do. Nisi irure qui nostrud velit laboris anim aliqua commodo.
-
-Reprehenderit dolor eiusmod ut laborum. Ea cupidatat sit sunt pariatur proident ea cillum consectetur ipsum ea non. In cupidatat magna laboris aliquip laboris fugiat id dolor amet consectetur incididunt. Ea est cupidatat officia eiusmod ad.
