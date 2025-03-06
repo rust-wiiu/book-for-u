@@ -1,6 +1,6 @@
 # Summary
 
-[Introduction](./intro.md)
+[Introduction](./introduction.md)
 - [Requirements](./requirements.md)
 - [Installation](./install.md)
 - [Wii U Architecture](./wiiu.md)
@@ -9,4 +9,5 @@
 
 -----------
 
+[FAQ](./faq.md)
 [Contributors](./contributions.md)

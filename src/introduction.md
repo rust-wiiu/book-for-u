@@ -2,6 +2,8 @@
 
 Welcome! This book is here to help you get started with Rust development on the Wii U. It will guide you through setting up your environment and writing your first lines of code for the platform. For more in-depth information, you can always read the documentation of the specific crates used, but this will get you off the ground and running.
 
+If you have any questions take a look at the [FAQ](./faq.md). If your questions were not answered, reach out to your communities at ...[link to discords, etc].
+
 ## What is Homebrew?
 
 Homebrew software refers to unofficial applications and tools developed by the community, bypassing manufacturer restrictions. It allows users to extend a console's functionality, enabling features like custom games, additional software, and system modifications.

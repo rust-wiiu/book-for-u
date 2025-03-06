@@ -46,7 +46,7 @@ use wut;
 use wut::prelude::*;
 use wut::time::Duration;
 
-!#[no_mangle]
+#[no_mangle]
 fn main() {
     wut::process::default();
 

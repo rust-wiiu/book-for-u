@@ -2,7 +2,7 @@
 
 ## Homebrew
 
-While you **don’t need a Wii U console** to develop software, having one is highly recommended. Not everything can run perfectly on emulators due to incomplete implementations, differences in behavior, or other quirks. Software that works on an emulator may fail on actual hardware, and vice versa. At the time of writing, the preferred homebrew environment for the Wii U is **Aroma**. To install it, I recommend following [this guide](https://wiiu.hacks.guide), though there are plenty of other resources available on Google, YouTube, and elsewhere.
+While you **don’t need a Wii U console** to develop software, having one is highly recommended. Not every application type can be run on emulators, not everything runs perfectly due to incomplete implementations, differences in behavior, or other quirks. Software that works on an emulator may fail on actual hardware, and vice versa. At the time of writing, the preferred homebrew environment for the Wii U is **Aroma**. To install it, I recommend following [this guide](https://wiiu.hacks.guide), though there are plenty of other resources available on Google, YouTube, and elsewhere.
 
 Once you’ve set up Aroma, I suggest installing the [Homebrew App Store](https://github.com/fortheusers/hb-appstore). This tool simplifies the process of installing and updating homebrew software. Any Wii U software I recommend *should* be available through this store. Some essential tools include:
 
