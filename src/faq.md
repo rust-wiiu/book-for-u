@@ -20,4 +20,4 @@ Finally, there’s a bigger picture here. By bringing Rust to legacy systems, we
 
 # Will it every be a real std version?
 
-Most likely not-unless tremendous effort is done and the external dependcies are at least reduced, to make a more standalone toolchain. *Maybe* oneday if the interest is high enough and there are enough contributers to make it feasable. But for the forseeable future, `rust-wiiu` remains an external tool which just trys to have a DX similar to the a std environment.
+Most likely not - unless tremendous effort is done and the external dependencies are at least reduced, to make a more standalone toolchain. It currently depends on other crates and external C tooling. *Maybe* oneday if the interest is high enough and there are enough contributers to make it feasable. But for the forseeable future, `rust-wiiu` remains an external tool which just trys to have a DX similar to the a std environment.
