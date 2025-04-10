@@ -1,12 +1,13 @@
 # Requirements
 
-This page provides a brief overview and checklist of recommended items for starting Wii U development. Required items are marked with an asterisk (*). Detailed explanations can be found in the [Installation](./install.md) section.
+This page provides a brief overview and checklist of recommended items to begin Wii U development. Required items are marked with an asterisk (*). For more comprehensive explanations, please refer to the [Installation](./install.md) section.
 
 ## Software
 
-- [Cemu](https://cemu.info)[^1]
+- [Cemu](https://cemu.info)
 - [Rust](https://www.rust-lang.org/)*
 - [cargo-make](https://github.com/sagiegurari/cargo-make)*
+- [cargo-generate](https://github.com/cargo-generate/cargo-generate)
 - [DevkitPro](https://devkitpro.org/)*
 - [Aroma](https://wiidatabase.de/wii-u-downloads/hacks/aroma/)
 - [Wiiload Plugin](https://github.com/wiiu-env/wiiload_plugin)
@@ -15,8 +16,12 @@ This page provides a brief overview and checklist of recommended items for start
 ## Skills
 
 - Rust*
-- C / C++[^2]
-- Debugging [^3]
+- C / C++
+- Debugging [^1]
+
+This guide assumes a foundational understanding of the Rust programming language. It will not cover Rust basics, as numerous excellent [free resources](./faq.md#how-to-learn-rust) are readily available. However, concepts related to `no_std` environments will be briefly introduced and explained as they arise.
+
+While the underlying SDK is built upon C libraries, direct interaction with them will generally not be necessary unless you intend to extend beyond the provided standard library-like features and venture into [unsafe Rust](./unsafe.md). Most C functions are bound using `extern "C"` and can be called directly which requires some understanding of the C calling convention / ABI. This should be mainly relevant for contributors to this project.
 
 ## Hardware
 
@@ -24,6 +29,6 @@ This page provides a brief overview and checklist of recommended items for start
 - SD Card
 - SD Card Reader
 
-[^1]: Other emulators like [decaf-emu](https://github.com/decaf-emu/decaf-emu), etc. exist but I highly recommend sticking to Cemu. It's considered the standard for Wii U emulators.
-[^2]: The underlying SDK is built on C libraries, but you likely won't need to interact with them directly unless you go beyond the provided std-like features into [unsafe territory](./unsafe.md). Most C functions are bound to `extern "C"` and can be called directly, requiring some knowledge of the C calling convention—especially for contributors to this project.
-[^3]: Debugging with e.g. the Cemu PPC Debugger can be helpful when directly using the C API. Using the Rust API *should* not require to go to that level at any point. <!-- GDB stub?  -->
+While a physical Wii U console is **not strictly required** for development, it is strongly recommended. Emulators, while valuable, may not accurately replicate the behavior of all application types or features due to incomplete implementations, inherent differences, or other platform-specific quirks. Consequently, software that functions correctly on an emulator may encounter issues on actual Wii U hardware, and vice versa.
+
+[^1]: While debugging tools like the Cemu PPC Debugger can be useful in certain situations, the Rust compiler is generally effective at catching many potential issues during the development process. <!-- GDB stub?  -->
