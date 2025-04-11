@@ -1,39 +1,3 @@
-# Getting Started
-
-Now that everything is setup, we can start creating our dream software.
-
-## 1. Create new project
-
-### cargo-generate (Recommended)
-
-```bash
-cargo-generate rust-wiiu/application-template
-```
-
-Running this command will open a simple CLI to help you setup the project.
-
-### git
-
-`Use this template` button on github to copy the template to a new repository. Add the projects name as the new repos name and clone it to your machine (of course replacing <Username> & <Project> appropietly)
-
-```bash
-git clone https://github.com/<Username>/<Project>.git
-```
-
-You will need to modify `Cargo.toml` by changing `{{project-name}}` and `{{authors}}` to appropiet values.
-
-## 2. It is alive!
-
-You can now try to compile and run the program for the first time. When everything is setup correctly you should be able to call the following command to compile the program.
-
-```bash
-cargo-make --xx production rpx
-```
-
-If everything works and you get no compile error you can find your program at `/target/powerpc-none-eabi/release/<Project>.rpx`. You can open Cemu, click Load, select the .rpx file and (hopefully) see it running. For more information about the [different file formats](), take a look at the documentation.
-
-Congratulations, you now are able to write Wii U software using Rust.
-
 ## Let's get into it
 
 So now that we know everything is working, we can take a look at the underlying code and explore the parts of the system. When you open the `src/main.rs` file it will look something like this:
@@ -111,15 +75,3 @@ What's so special about `println!()`? Nothing really, but since it deals with st
 #### 8. `wut::time::now() & wut::thread::sleep()`
 
 These are examples of std features which are implemented in wut. They (should) behave like their std siblings.
-
-## Time to modify
-
-You now know all the basics of writing Rust code on the Wii U. Now it's time to get your hands dirty and try to implement whatever you want to implement. You can take a look at the documentation to see what std-like features are available and which additional tools are available like `wut::screen` for drawing simple(!) graphics or `wut::gamepad` for controller inputs.
-
-A great source of inspiration is to look at what other people have done, understand their code, and adopt the code for your needs.
-
-[^1]: [List of supported platform](https://doc.rust-lang.org/nightly/rustc/platform-support.html), in case you are wondering.
-
-[^2]: [Read up](https://doc.rust-lang.org/reference/names/preludes.html) on `prelude`.
-
-[^3]: When decorating a function with `extern "C"` it will also disable name mangeling for the same reason: FFI expects the exact name, not some convoluted version.

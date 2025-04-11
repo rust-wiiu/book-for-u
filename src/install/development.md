@@ -26,7 +26,6 @@ sudo dkp-pacman -S wiiu-dev
 ### Rust
 
 An up-to-date installation of the Rust programming language is required. You can set up Rust by adhering to the [official installation guide](https://www.rust-lang.org/tools/install). After installation, verify the Rust version and confirm successful installation by executing the following command:
-Bash
 
 ```bash
 cargo --version
