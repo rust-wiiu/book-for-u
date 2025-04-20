@@ -1,77 +1,76 @@
-## Let's get into it
+# First Homebrew Application
 
-So now that we know everything is working, we can take a look at the underlying code and explore the parts of the system. When you open the `src/main.rs` file it will look something like this:
+With the development environment now set up, let's examine the fundamental code structure of a basic `rust-wiiu` application. Upon opening the `src/main.rs` file, you will typically find code resembling the following:
 
 ```rust
-!#[no_std]
-!#[no_main]
+#![no_std]
+#![no_main]
 
 use wut;
 use wut::prelude::*;
 use wut::time::Duration;
 
-#[wut_main(Console)]
+#[wut::main(Console)]
 fn main() {
     while wut::process::running() {
-        println!("{:?}", wut::time::now());
+        println!("{}", wut::time::DateTime::now());
         wut::thread::sleep(Duration::from_secs(1));
     }
 }
 ```
 
-Let's digest this code part by part:
+Let's dissect this code snippet part by part to understand its function and significance within the Wii U environment.
 
-#### 1. `!#[no_std]`
+### 1. `!#[no_std]` Attribute
 
-The Wii U / CafeOS does now have official Rust support; who could have guessed? Rust, by default, assumes that you are on a "typical" platform like x86-linux, ARM-windows, AppleSilicon, etc[^1]. There exist 3 stages of feature sets programmers can use with Rust: core, alloc, std. This enables Rust to be used at every level of the software stack; from bootloader to websites.
+The `!#[no_std]` attribute signifies that this Rust code will not link against the standard Rust library (`std`). Unlike typical desktop or server environments, embedded systems like the Wii U require a more minimal runtime environment. The Rust ecosystem provides a tiered approach to library support:
 
-[`std`](https://doc.rust-lang.org/std/index.html) is the "default" and used when on a typical platform and provides the entire Rust std library with platform specific implementations. So no matter if you are on a UNIX or Windows system, `std::path` will just work. [`alloc`](https://doc.rust-lang.org/alloc/index.html) is one level lower and provides a interface to and allocator. This basically means that the system has a heap and can make use of dynamic allocations (malloc, strings, vectors, ...). However, as this still requires some platform dependent code, a even lower level exist: [`core`](https://doc.rust-lang.org/core/index.html). Here, only base Rust functions exist (no platform dependence or dynamic allocations); meaning only stack-based memory can be used.
+* **`core`:** This is the foundational tier, providing essential language features without any platform-specific dependencies or dynamic memory allocation. Only stack-based memory management is available here.
+* **`alloc`:** This tier builds upon `core` and introduces an interface to a memory allocator, enabling dynamic memory allocation capabilities such as `String` and `Vec`. However, it still requires platform-specific implementations for the allocator itself.
+* **`std`:** This is the default tier for typical platforms[^1], offering the complete Rust standard library with platform-specific implementations for functionalities like file I/O, networking, and concurrency.
 
-So wait a minutes, does this mean at rust-wiiu doesn't even support `String`?! Calm down, rust-wiiu is way more close to a official supported platform (in form of programmer usage) than that might suggest. rust-wiiu defines a custom allocator and implements most of the relevant std-features, so you can use existing Rust knowledge. Still, the compiler/linker has to be informed about this "unusual environment".
+While the Wii U / CafeOS does not have official Rust support in the traditional sense, `rust-wiiu` bridges this gap by providing a custom allocator and implementing many relevant `std` features. This allows developers to leverage their existing Rust knowledge while targeting the Wii U. The `!#[no_std]` attribute informs the compiler and linker about this embedded environment.
 
-#### 2. `!#[no_main]`
+### 2. `!#[no_main]` Attribute
 
-Also an embedded rust macro. This special macro tells the linker to not create a main function. This is needed because the `fn main()` isn't the first thing that get's ran during program execution. Lots of other functions run beforehand, to setup heaps, forward arguments, etc. devkitPro has it's own pre-main instructions, so we need to tell Rust to not use it's otherwise useful magic.
+The `!#[no_main]` attribute is another embedded Rust macro. It instructs the linker not to generate the conventional `main` function that serves as the program's entry point in standard Rust environments. In embedded systems, the program execution flow often involves platform-specific initialization routines that occur before the user's `main` function would typically be called. In the context of Wii U homebrew development using devkitPro, the toolchain provides its own pre-`main` setup procedures. Therefore, we use `!#[no_main]` to prevent Rust from generating its default `main` entry point.
 
-#### 3. `use ...`
+### 3. `use` Statements
 
-These are your well known Rust import statements. Nothing unusual about them. The "wut" library contains the functionalities of rust-wiiu and `prelude::*` is to "import common stuff"[^2].
+These lines are standard Rust import statements, bringing specific modules and types into the current scope for easier use.
 
-It should be mentioned that `wut::time::Duration` is the **same** thing as `std::time::Duration`. Both are just reexports of `core::time::Duration`, which contains the actual implementations. Wut, like std, exports the entire `core` module for convenience and a single point of access.
+* `use wut;`: Imports the top-level `wut` crate, which contains the Wii U-specific functionalities provided by `rust-wiiu`.
+* `use wut::prelude::*;`: Imports commonly used items from the `wut` prelude. This is a convention to bring frequently used types and traits into scope for convenience.
+* `use wut::time::Duration;`: Imports the `Duration` type specifically from the `wut::time` module, representing a span of time.
 
-<!-- #### 4. `!#[no_mangle]`
+It's worth noting that `wut::time::Duration` is semantically equivalent to `std::time::Duration`. Both are ultimately re-exports of `core::time::Duration`, which houses the fundamental implementation. The `wut` crate, like `std`, re-exports parts of the `core` module for a more unified and accessible API.
 
-This macro is commonly used when interacting with foreign functions, e.g. functions compiled in C[^3]. It disables [Name Mangeling](https://wikipedia.org/wiki/Name_mangling), which is a technique to make function names truly unique by changing them at compile time. This is normally not a problem (and actual wanted), but the devkitPro toolchain searches for a symbol named "main" during compiling/linking, so mangling this name will make the main function indetectable.
+### 4. `!#[wut::main(Console)]` Attribute
 
-#### 5. `wut::process::default()`
+This macro performs platform-specific initialization tasks that enhance the development experience by mimicking a more standard environment. While not strictly necessary for the program to execute, it provides conveniences such as initializing a logging mechanism and ensuring a cleaner program exit. You can consult the `rust-wiiu` documentation for a comprehensive understanding of its functionality. This macro can be replaced with custom initialization code if needed.
 
-This function sets up some functionalities for wut. It does some thing similar, but not exlusively, to the stuff that would run pre-main. There are some configuration you could do by running `wut::process:new()` instead, but you can read the documentation for that. For now, it is required and you can mostly just ignore it. -->
+The `Console` attribute passed to the `wut::main` macro is particularly important for early development and debugging. It configures the system to output log messages and `println!` statements to an on-screen console. Be aware that this on-screen console output may conflict with any graphical rendering you implement later in your application. The `Console` attribute can be omitted, changed to a different logger type, or combined with other logging configurations as detailed in the `rust-wiiu` documentation.
 
-#### 4. `!#[wut_main(Console)]`
+### 6. `while wut::process::running() {…}` Loop
 
-Here the magic of rust-wiiu begins. This macro sets up some stuff not necessarily needed for the program to work but to make it behave more like a std environment. You can look up the documentation, but TL;DR it initializes a logger, cleaner exit, etc. This macro can be replaced with some other code and just a convenience.
-
-The most important thing for now is the attribute given to the macro, `Console`. This will result in a on screen console (which will conflict with on screen rendering btw). This is especially useful for early testing. The attribute can be omitted, changed or combined with other logger. Check the documentation for more info. 
-
-#### 6. `while wut::process::running() {…}`
-
-This is a normal main loop. Here, the main code of the program is ran in an "infinite" loop. It would also be valid to write
+This is the primary execution loop of the application. The code within this loop will continue to execute indefinitely until the application is terminated. An alternative, but functionally similar, way to write this loop is:
 
 ```rust
 loop {
-    // code
     if !wut::process::running() {
         break;
     }
 }
 ```
 
-The important thing is that during an infinite loop `wut::process::running()` is called somewhat frequently, as it is required for the foreground release, i.e. the HOME button,  to function (or more precisely, to move the app out of the foreground). This means, if you have the main thread blocking is some way, the app cannot be closed.
+A crucial aspect of this loop is the frequent call to `wut::process::running()`. This function checks if the application is still running in the foreground. It is essential for the proper functioning of the foreground release mechanism, specifically the HOME button. When the HOME button is pressed, the system relies on this check to move the application out of the foreground. Therefore, if the main thread within this loop becomes blocked for an extended period without calling `wut::process::running()`, the application may become unresponsive to the HOME button.
 
-#### 7. `println!(…)`
+### 7. `println!(…)` Macro
 
-What's so special about `println!()`? Nothing really, but since it deals with strings, it is normally defined by std. It is part of the "common stuff" imported via `wut::prelude::*` (and gets setup with the `wut_main(Console)` macro).
+The `println!()` macro is used for printing formatted text to the console. While typically defined in the standard library (`std`), in this `no_std` environment, its functionality is provided by the `wut` crate and is set up by the `wut::main(Console)` macro. It is part of the commonly used items imported via `wut::prelude::*`.
 
-#### 8. `wut::time::now() & wut::thread::sleep()`
+### 8. `wut::time::DateTime::now() & wut::thread::sleep()` Functions
 
-These are examples of std features which are implemented in wut. They (should) behave like their std siblings.
+These are examples of standard library-like features that have been implemented within the `wut` crate to provide familiar functionalities in the embedded Wii U environment. They are designed to behave similarly to their counterparts in the standard Rust library, offering time-related operations and thread pausing capabilities.
+
+[^1]: For a comprehensive list of officially supported Rust platforms, please refer to the [Rust Platform Support documentation](https://doc.rust-lang.org/nightly/rustc/platform-support.html).

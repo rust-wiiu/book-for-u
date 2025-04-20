@@ -9,13 +9,13 @@
 
 Homebrew software encompasses unofficial applications and tools created by the community, operating outside of the manufacturer's officially supported ecosystem. It empowers users to expand a console's capabilities, unlocking functionalities such as custom games, supplementary software, and system modifications.
 
-# Will it every be a real std version?
+## Will it every be a real std version?
 
 It is highly unlikely that `rust-wiiu` will ever become a fully integrated standard Rust environment. Several aspects of the underlying toolchain are fundamentally incompatible with standard Rust configurations. While a future integration might theoretically be possible given sufficient interest and a dedicated team of contributors, it is not feasible in the foreseeable future. Therefore, `rust-wiiu` will continue to exist as an external toolchain that strives to offer a developer experience (DX) as close as possible to a standard Rust environment.
 
 Furthermore, the freedom from strict adherence to the standard library (`std`) API can offer significant convenience, particularly for rapid development. While this flexibility might occasionally result in APIs that are less optimal or non-standardized in terms of performance, security, or other aspects, the trade-off in terms of ease and speed of development is often considered worthwhile.
 
-# How to learn Rust?
+## How to learn Rust?
 
 Start using it. If you have no prior programming experience, it's worth noting that Rust, with its explicit and strict nature (qualities that ultimately contribute to its strength and reliability), might present a steeper initial learning curve compared to some other languages. However, I would never want to discourage anyone from embarking on the journey of learning Rust. To support you in this endeavor, here's a curated list of resources that I personally recommend or that are highly regarded within the Rust community:
 

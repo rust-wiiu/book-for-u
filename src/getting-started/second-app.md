@@ -1,12 +1,15 @@
+# Your Second Homebrew Application
 
-## Time to modify
+Having grasped the fundamentals of writing Rust code for the Wii U, it's now time to put that knowledge into practice and embark on your own creative endeavors. Feel free to explore and implement any functionality that sparks your interest.
 
-You now know all the basics of writing Rust code on the Wii U. Now it's time to get your hands dirty and try to implement whatever you want to implement. You can take a look at the documentation to see what std-like features are available and which additional tools are available like `wut::screen` for drawing simple(!) graphics or `wut::gamepad` for controller inputs.
+The `rust-wiiu` documentation serves as a valuable resource, detailing the available standard library-like features and additional tools at your disposal. These include modules such as `wut::screen` for rendering basic graphics and `wut::gamepad` for handling controller inputs.
 
-A great source of inspiration is to look at what other people have done, understand their code, and adopt the code for your needs.
+A highly effective way to gain inspiration and accelerate your learning is to examine existing homebrew applications. By studying their code, understanding their design patterns, and adapting their techniques to your specific needs, you can significantly enhance your development skills and create compelling Wii U applications.
 
-[^1]: [List of supported platform](https://doc.rust-lang.org/nightly/rustc/platform-support.html), in case you are wondering.
+## Example 1
 
-[^2]: [Read up](https://doc.rust-lang.org/reference/names/preludes.html) on `prelude`.
+TODO: An example on how to use `screen`
 
-[^3]: When decorating a function with `extern "C"` it will also disable name mangeling for the same reason: FFI expects the exact name, not some convoluted version.
+## Example 2
+
+TODO: An example on how to use `fs` & `path`

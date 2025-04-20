@@ -9,7 +9,7 @@
     - [Development](./install/development.md)
     - [Crates](./install/crates.md)
 - [Getting Started](./getting-started/getting-started.md)
-    - [New project](./getting-started/new-project.md)
+    - [Project Initialization](./getting-started/project-initialization.md)
     - [First Application](./getting-started/first-app.md)
     - [Second Application](./getting-started/second-app.md)
 - [Unsafe Territory](./unsafe.md)
