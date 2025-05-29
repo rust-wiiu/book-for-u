@@ -21,7 +21,7 @@ This page provides a brief overview and checklist of recommended items to begin 
 
 This guide assumes a foundational understanding of the Rust programming language. It will not cover Rust basics, as numerous excellent [free resources](./faq.md#how-to-learn-rust) are readily available. However, concepts related to `no_std` environments will be briefly introduced and explained as they arise.
 
-While the underlying SDK is built upon C libraries, direct interaction with them will generally not be necessary unless you intend to extend beyond the provided standard library-like features and venture into [unsafe Rust](./unsafe.md). Most C functions are bound using `extern "C"` and can be called directly which requires some understanding of the C calling convention / ABI. This should be mainly relevant for contributors to this project.
+While the underlying SDK is built upon C libraries, direct interaction with them will generally not be necessary unless you intend to extend beyond the provided standard library-like features and venture into [unsafe FFI Rust](./unsafe.md). Most C functions are bound using `extern "C"` and can be called directly which requires some understanding of the C calling convention / ABI. This should be mainly relevant for contributors to this project.
 
 ## Hardware
 

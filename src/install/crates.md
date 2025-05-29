@@ -8,10 +8,11 @@ The `rust-wiiu` project is structured as a collection of interconnected crates (
 
 From a developer's perspective, all these crates are used in the same way. However, understanding their underlying nature can be helpful when troubleshooting errors, particularly during the compilation phase.
 
-While it is technically possible to install these crates in arbitrary locations, it would necessitate manual configuration adjustments and is generally not recommended. Instead, the suggested approach is to create a dedicated parent directory to house all `rust-wiiu` code. This facilitates easier access to files across different crates using relative paths. (Note: The feasibility of utilizing Cargo's Git dependencies for this purpose is currently under investigation.)
+## Crates as Git Dependencies
 
-Once you have created a parent folder in your preferred location, you can obtain any of the provided crates by cloning their respective repositories into this directory. For example, to get the `wut` crate, you would execute the following command:
+All `rust-wiiu` crates are distributed directly via their respective GitHub repositories rather than through registries like `crates.io`. Fortunately, Cargo provides built-in support for [specifying dependencies from git repositories](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#specifying-dependencies-from-git-repositories).
+
+As an example, to add the latest release of the `wut` crate as a dependency to your `Cargo.toml` file, you can use the following command:
 
 ```bash
-git clone https://github.com/rust-wiiu/wut.git
-```
+cargo add --git https://github.com/rust-wiiu/wut.git wut

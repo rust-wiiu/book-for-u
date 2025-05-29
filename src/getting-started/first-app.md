@@ -33,7 +33,7 @@ While the Wii U / CafeOS does not have official Rust support in the traditional 
 
 ### 2. `!#[no_main]` Attribute
 
-The `!#[no_main]` attribute is another embedded Rust macro. It instructs the linker not to generate the conventional `main` function that serves as the program's entry point in standard Rust environments. In embedded systems, the program execution flow often involves platform-specific initialization routines that occur before the user's `main` function would typically be called. In the context of Wii U homebrew development using devkitPro, the toolchain provides its own pre-`main` setup procedures. Therefore, we use `!#[no_main]` to prevent Rust from generating its default `main` entry point.
+The `!#[no_main]` attribute is another part of embedded Rust. It instructs the linker not to generate the conventional `main` function that serves as the program's entry point in standard Rust environments. In embedded systems, the program execution flow often involves platform-specific initialization routines that occur before the user's `main` function would typically be called. In the context of Wii U homebrew development using devkitPro, the toolchain provides its own pre-`main` setup procedures. Therefore, we use `!#[no_main]` to prevent Rust from generating its default `main` entry point.
 
 ### 3. `use` Statements
 
