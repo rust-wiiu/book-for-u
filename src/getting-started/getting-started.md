@@ -1,3 +1,3 @@
 # Getting Started
 
-Now that everything is setup, lets get to working Homebrew software.
+Once everything is set, let's work on creating homwbrew software.
