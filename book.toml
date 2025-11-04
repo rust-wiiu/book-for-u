@@ -3,7 +3,6 @@ title = "Book for U"
 authors = ["29th-Day"]
 description = "Book to help you get started with developing your Wii U Homebrew in Rust."
 language = "en"
-multilingual = false
 src = "src"
 
 [output.html]
