@@ -29,7 +29,7 @@ The `!#[no_std]` attribute signifies that this Rust code will not link against t
 * **`alloc`:** This tier builds upon `core` and introduces an interface to a memory allocator, enabling dynamic memory allocation capabilities such as `String` and `Vec`. However, it still requires platform-specific implementations for the allocator itself.
 * **`std`:** This is the default tier for typical platforms[^1], offering the complete Rust standard library with platform-specific implementations for functionalities like file I/O, networking, and concurrency.
 
-While the Wii U / CafeOS does not have official Rust support in the traditional sense, `rust-wiiu` bridges this gap by providing a custom allocator and implementing many relevant `std` features. This allows developers to leverage their existing Rust knowledge while targeting the Wii U. The `!#[no_std]` attribute informs the compiler and linker about this embedded environment.
+While the Wii U / Cafe OS does not have official Rust support in the traditional sense, `rust-wiiu` bridges this gap by providing a custom allocator and implementing many relevant `std` features. This allows developers to leverage their existing Rust knowledge while targeting the Wii U. The `!#[no_std]` attribute informs the compiler and linker about this embedded environment.
 
 ### 2. `!#[no_main]` Attribute
 
@@ -51,7 +51,7 @@ This macro performs platform-specific initialization tasks that enhance the deve
 
 The `Console` attribute passed to the `wut::main` macro is particularly important for early development and debugging. It configures the system to output log messages and `println!` statements to an on-screen console. Be aware that this on-screen console output may conflict with any graphical rendering you implement later in your application. The `Console` attribute can be omitted, changed to a different logger type, or combined with other logging configurations as detailed in the `rust-wiiu` documentation.
 
-### 6. `while wut::process::running() {…}` Loop
+### 5. `while wut::process::running() {…}` Loop
 
 This is the primary execution loop of the application. The code within this loop will continue to execute indefinitely until the application is terminated. An alternative, but functionally similar, way to write this loop is:
 
@@ -65,11 +65,11 @@ loop {
 
 A crucial aspect of this loop is the frequent call to `wut::process::running()`. This function checks if the application is still running in the foreground. It is essential for the proper functioning of the foreground release mechanism, specifically the HOME button. When the HOME button is pressed, the system relies on this check to move the application out of the foreground. Therefore, if the main thread within this loop becomes blocked for an extended period without calling `wut::process::running()`, the application may become unresponsive to the HOME button.
 
-### 7. `println!(…)` Macro
+### 6. `println!(…)` Macro
 
 The `println!()` macro is used for printing formatted text to the console. While typically defined in the standard library (`std`), in this `no_std` environment, its functionality is provided by the `wut` crate and is set up by the `wut::main(Console)` macro. It is part of the commonly used items imported via `wut::prelude::*`.
 
-### 8. `wut::time::DateTime::now() & wut::thread::sleep()` Functions
+### 7. `wut::time::DateTime::now() & wut::thread::sleep()` Functions
 
 These are examples of standard library-like features that have been implemented within the `wut` crate to provide familiar functionalities in the embedded Wii U environment. They are designed to behave similarly to their counterparts in the standard Rust library, offering time-related operations and thread pausing capabilities.
 

@@ -4,14 +4,14 @@ This document provides essential insights and relevant information about the Wii
 
 ## Summary
 
-- **CPU: "Espresso" [PowerPC](https://de.wikipedia.org/wiki/PowerPC)**
+- **CPU: "Espresso" [PowerPC](https://wikipedia.org/wiki/PowerPC)**
     - 32-bit architecture
     - Big-endian byte order
 - **GPU: "Latte" AMD**
 - **Memory: 2 GB DDR3 RAM**
     - 1 GB reserved for the operating system
     - 1 GB available for user applications
-- **Operating System: CafeOS**
+- **Operating System: Cafe OS**
     - POSIX-like?
     - Supports foreground and background applications
     - Implements threads and scheduling mechanisms
@@ -21,7 +21,7 @@ This document provides essential insights and relevant information about the Wii
 
 ## Further Information
 
-- [**Wii U - Wikipedia**](https://de.wikipedia.org/wiki/Wii_U): A general overview of the platform and trivia.
+- [**Wii U - Wikipedia**](https://wikipedia.org/wiki/Wii_U): A general overview of the platform and trivia.
 - [**Hardware - WiiUBrew**](https://wiiubrew.org/wiki/Hardware): A concise summary of the Wii U's hardware components.
 - [**Wii U Architecture - copetti.org**](https://www.copetti.org/writings/consoles/wiiu/): An in-depth exploration of the Wii U's hardware and software architecture.
-- [**Cafe OS - WiiUBrew**](https://wiiubrew.org/wiki/Cafe_OS): Detailed information about the Wii U's operating system, CafeOS.
+- [**Cafe OS - WiiUBrew**](https://wiiubrew.org/wiki/Cafe_OS): Detailed information about the Wii U's operating system, Cafe OS.
