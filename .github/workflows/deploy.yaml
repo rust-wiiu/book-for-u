@@ -18,7 +18,6 @@ jobs:
       - name: Install latest mdbook
         run: |
           cargo install mdbook
-          cargo install mdbook-alerts
       - name: Build Book
         run: |
           # This assumes your book is in the root of your repository.
