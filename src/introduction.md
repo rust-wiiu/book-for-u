@@ -1,5 +1,8 @@
 # Welcome!
 
+> [!CAUTION]
+> We are currently completly reworking the project! Using it in the current state (or following this guide) is highly discouraged.
+
 This guide aims to facilitate your initial steps in developing applications for the Wii U using the Rust programming language. It will walk you through the necessary environment setup and the process of writing your first lines of code for the platform. While more detailed information can always be found in the documentation of the specific Rust crates utilized, this book will provide you with the foundational knowledge to get started and running quickly.
 
 ## Need assistance?
